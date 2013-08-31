@@ -1,0 +1,106 @@
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin-templates/header.phtml';
+?>
+
+
+
+
+    <div class="col-lg-10 main_container">
+<!--- main_container --->
+
+        <h3> <?php echo $t->_('Uc') . ' ' . $page->total_items;  ?> </h3>
+
+        <br>
+        <form method="post" action="">
+            <input name="s_username" type="text" value="" placeholder="username"> или
+            <input name="s_id" type="text" value="" placeholder="id">
+            <input class="btn" type="submit" value="<?= $t->_('search')?>">
+        </form>
+
+        <br>
+
+        <?php if($page->current > $page->total_pages  and $this->dispatcher->getParam("page") != '') { ?>
+                <?= $this->flash->warning($t->_('Your_search_returned_no_results')) ?>
+        <?php } ?>
+        <?php ?>
+        <?=  $this->flashSession->output() ?>
+
+        <div style="min-height: 450px;">
+            <table class="table table-condensed">
+                <tr>
+                    <th> <?php echo $t->_('id') ?></th>
+                    <th> <?php echo $t->_('firstname') ?></th>
+                    <th> <?php echo $t->_('lastname') ?></th>
+                    <th> <?php echo $t->_('username') ?></th>
+                    <th> <?php echo $t->_('email') ?></th>
+                    <th> <?php echo $t->_('birthday') ?></th>
+                    <th> <?php echo $t->_('last_login') ?></th>
+                    <th> <?php echo $t->_('logins') ?></th>
+                    <th> <?php echo $t->_('role') ?></th>
+                    <th> <?php echo $t->_('action') ?></th>
+                </tr>
+                <?php foreach($page->items as $user) { ?>
+                    <tr>
+                        <td> <?php echo $user->id ?> </td>
+                        <td> <?php echo $user->firstname ?> </td>
+                        <td> <?php echo $user->lastname ?> </td>
+                        <td> <?php echo $user->username ?> </td>
+                        <td> <?php echo $user->email ?> </td>
+                        <td> <?php echo $user->birthday ?> </td>
+                        <td> <?php echo $user->last_login ?> </td>
+                        <td> <?php echo $user->logins ?> </td>
+                        <td> <?php echo $user->role ?> </td>
+                        <td>
+                            <a href="/admin/uc/delete/<?= $user->id ?>/<?= $page->current ?>"> <span class="glyphicon glyphicon-remove"></span> </a>
+                            <a href="/admin/uc/edit/<?= $user->id ?>/<?= $page->current ?>"> <span class="glyphicon glyphicon-edit"></span> </a>
+                        </td>
+                    </tr>
+                <?php  } ?>
+
+            </table>
+        </div>
+
+
+
+        <div style="text-align: center">
+            <ul class="pagination">
+
+                <?php if( $page->current != 1) { ?>
+                <li><a href="/admin/uc/"> <?php echo $t->_('first'); ?> </a></li>
+                <li><a href="/admin/uc/<?php echo $page->before; ?>"><?php echo $t->_('before'); ?> </a></li>
+                <?php  } ?>
+
+                <?php if( $page->current-2 > 0) { ?>
+                <li><a href="/admin/uc/<?php echo $page->current-2; ?>"> <?php echo $page->current-2; ?> </a></li>
+                <?php  } ?>
+                <?php if( $page->current-1 > 0) { ?>
+                    <li><a href="/admin/uc/<?php echo $page->current-1; ?>"> <?php echo $page->current-1; ?> </a></li>
+                <?php  } ?>
+
+                    <li><a href="/admin/uc/<?php echo $page->current; ?>"> <strong><?php echo $page->current; ?></strong>  </a></li>
+
+                <?php if( $page->current+1 <= $page->total_pages) { ?>
+                <li><a href="/admin/uc/<?php echo $page->current+1; ?>"> <?php echo $page->current+1; ?> </a></li>
+                <?php  } ?>
+                <?php if( $page->current+2 <= $page->total_pages) { ?>
+                <li><a href="/admin/uc/<?php echo $page->current+2; ?>"> <?php echo $page->current+2; ?> </a></li>
+                <?php  } ?>
+
+                <?php if( $page->current != $page->total_pages) { ?>
+                <li><a href="/admin/uc/<?php echo $page->next; ?>"><?php echo $t->_('next'); ?></a></li>
+                <li><a href="/admin/uc/<?php echo $page->last; ?>"><?php echo $t->_('last'); ?></a></li>
+                <?php  } ?>
+
+
+            </ul>
+        </div>
+
+
+<!--- main_container --->
+    </div>
+
+
+
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin-templates/footer.phtml';
+?>

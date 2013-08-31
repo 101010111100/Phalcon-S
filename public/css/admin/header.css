@@ -1,0 +1,21 @@
+.header {
+    background: #3667b8;
+    margin-bottom: 1px;
+}
+
+.header a {
+    text-decoration: none;
+    font-size: 19px;
+}
+
+#version {
+    float: right;
+    display: block;
+    padding: 15px 15px;
+    color: #fff;
+}
+
+#logo {
+    color: #fff;
+    font-weight: bolder;
+}

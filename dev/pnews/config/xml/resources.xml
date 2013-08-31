@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<acl>
+    <resource module="pnews" controller="pnews"/>
+    <resource module="pnews" controller="administrationpnews"/>
+</acl>

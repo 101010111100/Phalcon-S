@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menus>
+  <menu href="/admin" link_name="Home"/>
+  <menu href="/admin/uc" link_name="Members"/>
+  <menu href="/admin/modulemanager" link_name="Modules"/>
+  <!---->
+  
+</menus>

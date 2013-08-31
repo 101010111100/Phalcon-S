@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<acl>
+    <role name="Administrator"/>
+    <role name="Guest"/>
+    <role name="User"/>
+    <role name="Moderator"/>
+</acl>

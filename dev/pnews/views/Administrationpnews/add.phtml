@@ -1,0 +1,32 @@
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin-templates/header.phtml';
+?>
+
+
+
+
+    <div class="col-lg-10 main_container">
+        <!--- main_container --->
+
+        <h3> Новости </h3>
+
+        <br>
+
+        <?=  $this->flashSession->output() ?>
+
+        <ul class="nav nav-tabs">
+            <li><a href="/pnews/administrationpnews"> Новости </a></li>
+            <li class="active"><a href="/pnews/administrationpnews/add"> Добавить новость </a></li>
+            <li><a href="/pnews/administrationpnews/comments"> Комментарии </a></li>
+        </ul>
+
+
+
+    </div>
+
+
+
+
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin-templates/footer.phtml';
+?>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <route name="pnews" url="/pnews" module="pnews" controller="pnews" action="index"/>
+    <route name="pnews" url="/pnews/administrationpnews" module="pnews" controller="administrationpnews" action="index"/>
+    <route name="pnews" url="/pnews/administrationpnews/add" module="pnews" controller="administrationpnews" action="add"/>
+    <route name="pnews" url="/pnews/administrationpnews/delete/{item_id}/{page_number}" module="pnews" controller="administrationpnews" action="delete"/>
+    <route name="pnews" url="/pnews/administrationpnews/comments" module="pnews" controller="administrationpnews" action="comments"/>
+    <route name="pnews" url="/pnews/administrationpnews/category" module="pnews" controller="administrationpnews" action="category"/>
+    <route name="pnews" url="/pnews/administrationpnews/categoryDelete/{item_id}" module="pnews" controller="administrationpnews" action="categoryDelete"/>
+    <route name="pnews" url="/pnews/administrationpnews/categoryCreateActionAjax" module="pnews" controller="administrationpnews" action="categoryCreateActionAjax"/>
+    <route name="pnews" url="/pnews/administrationpnews/categoryEditActionAjax" module="pnews" controller="administrationpnews" action="categoryEditActionAjax"/>
+    <route name="pnews" url="/pnews/administrationpnews/imageUpload" module="pnews" controller="administrationpnews" action="imageUpload"/>
+</routes>

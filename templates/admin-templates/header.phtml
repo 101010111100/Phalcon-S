@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="/css/bootstrap-glyphicons.css" rel="stylesheet" media="screen">
+    <link href="/css/admin/styler.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+
+<div class="navbar navbar-static-top header">
+    <a id="logo" href="/admin"><img src="/img/logo.png"> Phalcon S </a> <div id="version"><a style="color: #fff;font-size: 14px" href="exit"><span class="glyphicon glyphicon-off"></span></a> </div>
+</div>
+
+
+
+    <div class="col-lg-2 left_column">
+
+        <div id='left_column_nav'>
+            <ul>
+                <?php
+                $menus = simplexml_load_file($_SERVER['DOCUMENT_ROOT'] . '/apps/config/xml/admin_templates_left_menu.xml');
+                ?>
+                <?php foreach ($menus->menu as $menu) { ?>
+                    <li>
+                        <a href=' <?=$menu['href']?> '> <span> <?php echo $t->_(''.$menu['link_name'].''); ?> </span></a>
+                   </li>
+                <?php } ?>
+            </ul>
+        </div>
+
+
+
+
+    </div>

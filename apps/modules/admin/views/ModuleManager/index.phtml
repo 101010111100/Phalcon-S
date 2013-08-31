@@ -1,0 +1,96 @@
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin-templates/header.phtml';
+?>
+
+
+
+
+    <div class="col-lg-10 main_container">
+        <!--- main_container --->
+
+        <h3> <?=$t->_('module manager')?></a> </h3>
+
+        <br>
+
+        <?php if($page->current > $page->total_pages and $this->dispatcher->getParam("page") != '') { ?>
+            <?= $this->flash->warning($t->_('Your_search_returned_no_results')) ?>
+        <?php } ?>
+
+        <?=  $this->flashSession->output() ?>
+
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="/admin/modulemanager"> <?=$t->_('Modules')?> </a></li>
+            <li><a href="/admin/modulemanager/add"> <?=$t->_('add module')?> </a></li>
+        </ul>
+
+        <div style="min-height: 450px;">
+
+            <br>
+
+            <table class="table table-condensed">
+                <tr style="background: #f4f4f4">
+                    <th> <?=$t->_('Name')?>  </th>
+                    <th> <?=$t->_('Path')?>  </th>
+                    <th style="width: 70%"> <?=$t->_('Description')?> </th>
+                    <th> <?=$t->_('Author')?>  </th>
+                    <th> <?=$t->_('Version')?> </th>
+                    <th> <?=$t->_('action')?>  </th>
+                </tr>
+                <?php foreach($page->items as $module) { ?>
+                <tr>
+                    <td> <?=$module->name ?> </td>
+                    <td> <?=$module->path ?> </td>
+                    <td> <?=$module->description ?> </td>
+                    <td> <?=$module->author ?> </td>
+                    <td> <?=$module->version ?> </td>
+                    <td> <a href="/admin/modulemanager/delete/<?=$module->path ?> ">del</a>  </td>
+                </tr>
+                <?php  } ?>
+            </table>
+        </div>
+
+
+        <div style="text-align: center">
+            <ul class="pagination">
+
+                <?php if( $page->current != 1) { ?>
+                    <li><a href="/admin/modulemanager/"> <?php echo $t->_('first'); ?> </a></li>
+                    <li><a href="/admin/modulemanager/<?php echo $page->before; ?>"><?php echo $t->_('before'); ?> </a></li>
+                <?php  } ?>
+
+                <?php if( $page->current-2 > 0) { ?>
+                    <li><a href="/admin/modulemanager/<?php echo $page->current-2; ?>"> <?php echo $page->current-2; ?> </a></li>
+                <?php  } ?>
+                <?php if( $page->current-1 > 0) { ?>
+                    <li><a href="/admin/modulemanager/<?php echo $page->current-1; ?>"> <?php echo $page->current-1; ?> </a></li>
+                <?php  } ?>
+
+                <li><a href="/admin/modulemanager/<?php echo $page->current; ?>"> <strong><?php echo $page->current; ?></strong>  </a></li>
+
+                <?php if( $page->current+1 <= $page->total_pages) { ?>
+                    <li><a href="/admin/modulemanager/<?php echo $page->current+1; ?>"> <?php echo $page->current+1; ?> </a></li>
+                <?php  } ?>
+                <?php if( $page->current+2 <= $page->total_pages) { ?>
+                    <li><a href="/admin/modulemanager/<?php echo $page->current+2; ?>"> <?php echo $page->current+2; ?> </a></li>
+                <?php  } ?>
+
+                <?php if( $page->current != $page->total_pages) { ?>
+                    <li><a href="/admin/modulemanager/<?php echo $page->next; ?>"><?php echo $t->_('next'); ?></a></li>
+                    <li><a href="/admin/modulemanager/<?php echo $page->last; ?>"><?php echo $t->_('last'); ?></a></li>
+                <?php  } ?>
+
+
+            </ul>
+        </div>
+
+
+
+        <!--- main_container --->
+    </div>
+
+
+
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin-templates/footer.phtml';
+?>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+    <info
+            name="Pnews"
+            description="Модуль новостей"
+            version="1.0"
+            author="FB"
+    />
+</information>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<acl>
+  <resource module="admin" controller="admin"/>
+  <resource module="admin" controller="alogin"/>
+  <resource module="admin" controller="userscontrol"/>
+  <resource module="admin" controller="modulemanager"/>
+  <resource module="front" controller="index"/>
+  <!---->
+  
+  
+</acl>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<acl>
+  <allow role="Administrator" module="admin" controller="admin"/>
+  <allow role="Administrator" module="admin" controller="alogin"/>
+  <allow role="Administrator" module="admin" controller="userscontrol"/>
+  <allow role="Administrator" module="admin" controller="modulemanager"/>
+
+
+  <allow role="Administrator" module="admin" controller="alogin"/>
+  <allow role="Guest" module="admin" controller="alogin"/>
+  <allow role="Moderator" module="admin" controller="alogin"/>
+
+  <allow role="Administrator" module="front" controller="index"/>
+  <allow role="Guest" module="front" controller="index"/>
+  <allow role="Moderator" module="front" controller="index"/>
+  <!---->
+  
+  
+</acl>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <front>
+    <className>P\Front\Module</className>
+    <path>../apps/modules/front/Module.php</path>
+  </front>
+  <admin>
+    <className>P\Admin\Module</className>
+    <path>../apps/modules/admin/Module.php</path>
+  </admin>
+  <!---->
+
+</root>

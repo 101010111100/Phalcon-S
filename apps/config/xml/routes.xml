@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+  <!-- site  -->
+  <route name="front" url="/" module="front" controller="index" action="index"/>
+  <route name="front" url="/front" module="front" controller="index" action="index"/>
+  <route name="front" url="/front/error404" module="front" controller="index" action="error404"/>
+  <route name="admin" url="/admin" module="admin" controller="admin" action="index"/>
+  <route name="admin" url="/admin/login" module="admin" controller="alogin" action="login"/>
+  <route name="admin" url="/admin/exit" module="admin" controller="alogin" action="exit"/>
+  <route name="admin" url="/admin/missionImpossible" module="admin" controller="admin" action="missionImpossible"/>
+  <route name="admin" url="/admin/uc" module="admin" controller="UsersControl" action="index"/>
+  <route name="admin" url="/admin/uc/{page}" module="admin" controller="UsersControl" action="index"/>
+  <route name="admin" url="/admin/uc/delete/{user_id}/{page_number}" module="admin" controller="UsersControl" action="delete"/>
+  <route name="admin" url="/admin/uc/edit" module="admin" controller="UsersControl" action="edit"/>
+  <route name="admin" url="/admin/uc/edit/{user_id}}" module="admin" controller="UsersControl" action="edit"/>
+  <route name="admin" url="/admin/uc/edit/{user_id}/{page_number}" module="admin" controller="UsersControl" action="edit"/>
+  <route name="admin" url="/admin/modulemanager" module="admin" controller="modulemanager" action="index"/>
+  <route name="admin" url="/admin/modulemanager/{page}" module="admin" controller="modulemanager" action="index"/>
+  <route name="admin" url="/admin/modulemanager/add" module="admin" controller="modulemanager" action="add"/>
+  <route name="admin" url="/admin/modulemanager/delete/{path}/" module="admin" controller="modulemanager" action="delete"/>
+  <!---->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</routes>

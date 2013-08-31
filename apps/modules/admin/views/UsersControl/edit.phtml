@@ -1,0 +1,67 @@
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin-templates/header.phtml';
+?>
+
+
+    <div class="col-lg-10 main_container">
+<!--- main_container --->
+
+        <h3> <a href="/admin/uc/<?=$page_id?>"><?=$t->_('Uc')?></a> / <?= $t->_('edit user') . ' '  ?> </h3>
+
+            <form method="post" action="/admin/uc/edit/<?=$user->id?>/<?=$page_id?>" class="form1"> <!-- admin.css -->
+                <div class="form-group">
+                    <input name="id" type="hidden" class="form-control" id="id" placeholder="id" value="<?=$user->id?>">
+                </div>
+
+                <div class="form-group">
+                    <label for="firstname"><?=$t->_('firstname')?>:</label>
+                    <input name="firstname" type="text" class="form-control" id="firstname" placeholder="firstname" value="<?=$user->firstname?>">
+                </div>
+
+                <div class="form-group">
+                    <label for="lastname"><?=$t->_('lastname')?>:</label>
+                    <input name="lastname" type="text" class="form-control" id="lastname" placeholder="lastname" value="<?=$user->lastname?>">
+                </div>
+                <div class="form-group">
+                    <label for="email"><?=$t->_('email')?>:</label>
+                    <input name="email" type="email" class="form-control" id="email" placeholder="email" value="<?=$user->email?>">
+                </div>
+                <div class="form-group">
+                    <label for="birthday"><?=$t->_('birthday')?>:</label>
+                    <input name="birthday" type="text" class="form-control" id="birthday" placeholder="birthday" value="<?=$user->birthday?>">
+                </div>
+                <div class="form-group">
+                    <label for="sex"><?=$t->_('sex')?>:</label>
+                    <input name="sex" type="text" class="form-control" id="sex" placeholder="sex" value="<?=$user->sex?>">
+                </div>
+                <div class="form-group">
+                    <label for="username"><?=$t->_('username')?>:</label>
+                    <input name="username" type="text" class="form-control" id="username" placeholder="username" value="<?=$user->username?>">
+                </div>
+
+                <label for="role"><?=$t->_('role')?> <?=$user->role?>, сменить на:</label>
+                <select name="role" class="form-control">
+                    <?php foreach ($roles->role as $role) { ?>
+                        <option id="role" value="<?=$role['name']?>"><?=$role['name']?></option>
+                    <?php } ?>
+                </select>
+                <br>
+                <input type="submit" name="edit" class="btn btn-default" value="<?=$t->_('save')?>">
+            </form>
+
+        <br>
+
+
+
+
+
+
+
+<!--- main_container --->
+    </div>
+
+
+
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin-templates/footer.phtml';
+?>

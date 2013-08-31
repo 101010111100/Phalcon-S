@@ -1,0 +1,10 @@
+.main_container {
+    min-height: 85%;
+    border: 1px solid #e1e1e1;
+    width: 86%;
+    margin-left: 1px;
+}
+
+.main_container a {
+    text-decoration: none;
+}

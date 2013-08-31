@@ -1,0 +1,42 @@
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin-templates/header.phtml';
+?>
+
+
+
+
+    <div class="col-lg-10 main_container">
+        <!--- main_container --->
+
+        <h3> <?=$t->_('module manager')?> </h3>
+
+        <br>
+
+        <?=  $this->flashSession->output() ?>
+
+        <ul class="nav nav-tabs">
+            <li><a href="/admin/modulemanager"> <?=$t->_('Modules')?> </a></li>
+            <li class="active"><a href="/admin/modulemanager/add"> <?=$t->_('add module')?> </a></li>
+        </ul>
+
+        <br><br><br>
+
+        <div>
+            <form method="post" action="/admin/modulemanager/add" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="InputFile"></label>
+                    <input type="file" name="file" id="InputFile" style="border: 1px solid #dbdbdb;background: #f0f0f0">
+                    <p class="help-block"> <?=$t->_('Select the zip file format files containing a module.')?> </p>
+                </div>
+                <input type="submit" value="<?=$t->_('add module')?>" name="add_module" class="btn btn-default">
+            </form>
+        </div>
+
+        <!--- main_container --->
+    </div>
+
+
+
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/admin-templates/footer.phtml';
+?>
